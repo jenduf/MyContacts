@@ -251,50 +251,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dte-f0-N1u">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
-                                <subviews>
-                                    <searchBar contentMode="redraw" misplaced="YES" searchBarStyle="prominent" translucent="NO" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xud-Bd-dkn">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="3Hk-dj-ZYf"/>
-                                            <constraint firstAttribute="height" constant="44" id="rxT-dh-NzT"/>
-                                        </constraints>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="barTintColor" red="0.38823529410000002" green="0.4941176471" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <scopeButtonTitles>
-                                            <string>Name</string>
-                                            <string>Company</string>
-                                            <string>E-mail</string>
-                                        </scopeButtonTitles>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="3Hk-dj-ZYf"/>
-                                                <exclude reference="rxT-dh-NzT"/>
-                                            </mask>
-                                        </variation>
-                                        <connections>
-                                            <outlet property="delegate" destination="Mta-Fh-UCn" id="Gal-EL-c1Y"/>
-                                        </connections>
-                                    </searchBar>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <searchBar contentMode="redraw" searchBarStyle="prominent" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xud-Bd-dkn">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Xud-Bd-dkn" secondAttribute="bottom" constant="44" id="79s-fE-IFs"/>
-                                    <constraint firstItem="Xud-Bd-dkn" firstAttribute="top" secondItem="Dte-f0-N1u" secondAttribute="top" id="RWR-Lh-gMw"/>
-                                    <constraint firstAttribute="trailing" secondItem="Xud-Bd-dkn" secondAttribute="trailing" id="cK9-zw-WTU"/>
-                                    <constraint firstItem="Xud-Bd-dkn" firstAttribute="leading" secondItem="Dte-f0-N1u" secondAttribute="leading" id="xhA-oa-0Ao"/>
-                                    <constraint firstAttribute="height" constant="88" id="zaj-W6-UqU"/>
+                                    <constraint firstAttribute="height" constant="44" id="3Hk-dj-ZYf"/>
+                                    <constraint firstAttribute="height" constant="44" id="rxT-dh-NzT"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" red="0.38823529410000002" green="0.4941176471" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="79s-fE-IFs"/>
+                                        <exclude reference="3Hk-dj-ZYf"/>
+                                        <exclude reference="rxT-dh-NzT"/>
                                     </mask>
                                 </variation>
-                            </view>
+                                <connections>
+                                    <outlet property="delegate" destination="Mta-Fh-UCn" id="Gal-EL-c1Y"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dwq-cU-6jd">
-                                <rect key="frame" x="0.0" y="88" width="600" height="512"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -455,19 +432,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Dte-f0-N1u" firstAttribute="leading" secondItem="044-dL-ZiQ" secondAttribute="leading" id="2hH-tt-M17"/>
+                            <constraint firstItem="Dwq-cU-6jd" firstAttribute="top" secondItem="Xud-Bd-dkn" secondAttribute="bottom" id="5kp-gU-7fQ"/>
                             <constraint firstItem="Dwq-cU-6jd" firstAttribute="top" secondItem="044-dL-ZiQ" secondAttribute="top" id="9ol-AZ-MMt"/>
                             <constraint firstItem="Dwq-cU-6jd" firstAttribute="top" secondItem="Juk-5G-lCw" secondAttribute="bottom" id="A1r-PE-AVA"/>
                             <constraint firstItem="dsW-SE-Rfd" firstAttribute="top" secondItem="Dwq-cU-6jd" secondAttribute="bottom" id="DN2-dz-qh1"/>
-                            <constraint firstAttribute="trailing" secondItem="Dte-f0-N1u" secondAttribute="trailing" id="EKw-A6-TLU"/>
-                            <constraint firstItem="Dwq-cU-6jd" firstAttribute="top" secondItem="Dte-f0-N1u" secondAttribute="bottom" id="KLp-y1-Kyc"/>
                             <constraint firstAttribute="trailing" secondItem="Dwq-cU-6jd" secondAttribute="trailing" id="L64-0O-xSK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xud-Bd-dkn" secondAttribute="trailing" id="L7x-BG-SN0"/>
+                            <constraint firstItem="Xud-Bd-dkn" firstAttribute="top" secondItem="044-dL-ZiQ" secondAttribute="topMargin" id="S1S-7D-dUR"/>
                             <constraint firstItem="Dwq-cU-6jd" firstAttribute="leading" secondItem="044-dL-ZiQ" secondAttribute="leading" id="cqB-Ss-69d"/>
+                            <constraint firstItem="Xud-Bd-dkn" firstAttribute="leading" secondItem="044-dL-ZiQ" secondAttribute="leading" id="gpy-aW-LqI"/>
                             <constraint firstAttribute="bottom" secondItem="Dwq-cU-6jd" secondAttribute="bottom" id="gxI-EU-WwB"/>
-                            <constraint firstItem="Dte-f0-N1u" firstAttribute="top" secondItem="044-dL-ZiQ" secondAttribute="top" id="qbN-on-4Cn"/>
+                            <constraint firstItem="Xud-Bd-dkn" firstAttribute="leading" secondItem="044-dL-ZiQ" secondAttribute="leadingMargin" id="n7V-4A-h8d"/>
+                            <constraint firstAttribute="trailing" secondItem="Xud-Bd-dkn" secondAttribute="trailing" id="yKn-QK-NMg"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="L7x-BG-SN0"/>
+                                <exclude reference="n7V-4A-h8d"/>
                                 <exclude reference="9ol-AZ-MMt"/>
                                 <exclude reference="A1r-PE-AVA"/>
                                 <exclude reference="DN2-dz-qh1"/>

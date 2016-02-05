@@ -109,7 +109,6 @@
 				6719F6011C5C54CE00FA714D /* Contact.swift */,
 				6719F60F1C5D127200FA714D /* CompanyDetails.swift */,
 				6719F6161C5D34ED00FA714D /* Email.swift */,
-				67D1BAAB1C63857C00561D7C /* SearchScope.swift */,
 				6719F6181C5D371F00FA714D /* PhoneNumber.swift */,
 			);
 			name = model;
@@ -167,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				6719F6261C62190400FA714D /* NavScreen.swift */,
+				67D1BAAB1C63857C00561D7C /* SearchScope.swift */,
 			);
 			name = enums;
 			sourceTree = "<group>";

@@ -12,5 +12,11 @@ public enum SearchScope: Int
 {
     case Name = 0, Company, Email
     
+    public static let stringValues = ["Name", "Company", "Email"]
+    
+    func getString() -> String
+    {
+        return SearchScope.stringValues[self.rawValue]
+    }
     
 }

@@ -26,6 +26,10 @@ class ContactsViewController: BaseViewController
     {
         super.viewDidLoad()
         
+        self.searchBar.showsScopeBar = true
+        
+        self.searchBar.scopeButtonTitles = SearchScope.stringValues
+        
         self.loadData()
     }
     
