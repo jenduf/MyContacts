@@ -8,58 +8,126 @@
 
 import Foundation
 
-public class Contact
+struct Contact: JSONParsable
 {
-    public var name: String = ""
-    public var position: String = ""
-    public var age: Int = 0
-    public var emails = [Email]()
-    public var addresses = [Address]()
-    public var phoneNumbers = [PhoneNumber]()
-    public var companyDetails: CompanyDetails?
-    public var homePage: String = ""
-    public var imageURL: String = ""
+    let name: String
+    let position: String
+    var age: Int = 0
+    let homePage: String
+    let imageURL: String
+    var emails = [Email]()
+    var addresses = [Address]()
+    var phoneNumbers = [PhoneNumber]()
+    var companyDetails: CompanyDetails?
     
-    public init(dict: NSDictionary)
+    
+    init(json: NSDictionary) throws
     {
-        self.name = dict["name"] as! String
-        self.position = dict["position"] as! String
-        self.age = dict["age"] as! Int
-
-        if let emailArray = dict["emails"] as? NSArray
+        guard let name = json["name"] as? String else
+        {
+            throw JSONParseError.MissingAttribute("name")
+        }
+        
+        guard let position = json["position"] as? String else
+        {
+            throw JSONParseError.MissingAttribute("position")
+        }
+        
+        guard let age = json["age"] as? Int else
+        {
+            throw JSONParseError.MissingAttribute("age")
+        }
+        
+        guard let homePage = json["homePage"] as? String else
+        {
+            throw JSONParseError.MissingAttribute("homePage")
+        }
+        
+        guard let imageURL = json["imageUrl"] as? String else
+        {
+            throw JSONParseError.MissingAttribute("imageURL")
+        }
+        
+        self.name = name
+        self.position = position
+        self.age = age
+        self.homePage = homePage
+        self.imageURL = imageURL
+        
+        if let emailArray = json["emails"] as? NSArray
         {
             for emailDict in emailArray
             {
-                let newEmail = Email(dict: emailDict as! NSDictionary) as Email
-                self.emails.append(newEmail)
+                do
+                {
+                    let newEmail = try Email(json: emailDict as! NSDictionary)
+                    self.emails.append(newEmail)
+                }
+                catch JSONParseError.MissingAttribute(let missingAttribute)
+                {
+                    print("unable to load email, missing attribute: \(missingAttribute)")
+                }
+                catch
+                {
+                    fatalError("Something's gone terribly wrong: \(error)")
+                }
             }
         }
         
-        if let addressArray = dict["address"] as? NSArray
+        if let addressArray = json["address"] as? NSArray
         {
             for addressDict in addressArray
             {
-                let newAddress = Address(dict: addressDict as! NSDictionary) as Address
-                self.addresses.append(newAddress)
+                do
+                {
+                    let newAddress = try Address(json: addressDict as! NSDictionary)
+                    self.addresses.append(newAddress)
+                }
+                catch JSONParseError.MissingAttribute(let missingAttribute)
+                {
+                    print("unable to load address, missing attribute: \(missingAttribute)")
+                }
+                catch
+                {
+                    fatalError("Something's gone terribly wrong: \(error)")
+                }
             }
         }
         
-        if let phoneArray = dict["phone"] as? NSArray
+        if let phoneArray = json["phone"] as? NSArray
         {
             for phoneDict in phoneArray
             {
-                let newPhone = PhoneNumber(dict: phoneDict as! NSDictionary) as PhoneNumber
-                self.phoneNumbers.append(newPhone)
+                do
+                {
+                    let newPhone = try PhoneNumber(json: phoneDict as! NSDictionary)
+                    self.phoneNumbers.append(newPhone)
+                }
+                catch JSONParseError.MissingAttribute(let missingAttribute)
+                {
+                    print("unable to load phone, missing attribute: \(missingAttribute)")
+                }
+                catch
+                {
+                    fatalError("Something's gone terribly wrong: \(error)")
+                }
             }
         }
         
-        if let details = dict["companyDetails"] as? NSDictionary
+        if let detailDict = json["companyDetails"] as? NSDictionary
         {
-            self.companyDetails = CompanyDetails(dict: details)
+            do
+            {
+                self.companyDetails = try CompanyDetails(json: detailDict)
+            }
+            catch JSONParseError.MissingAttribute(let missingAttribute)
+            {
+                print("unable to load company details, missing attribute: \(missingAttribute)")
+            }
+            catch
+            {
+                fatalError("Something's gone terribly wrong: \(error)")
+            }
         }
-        
-        self.homePage = dict["homePage"] as! String
-        
-        self.imageURL = dict["imageUrl"] as! String
     }
 }

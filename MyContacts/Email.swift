@@ -9,14 +9,24 @@
 
 import Foundation
 
-public class Email
+struct Email: JSONParsable
 {
-    public var address: String = ""
-    public var label: String = ""
+    let address: String
+    let label: String
     
-    public init(dict: NSDictionary)
+    init(json: NSDictionary) throws
     {
-        self.address = dict["email"] as! String
-        self.label = dict["label"] as! String
+        guard let address =  json["email"] as? String else
+        {
+            throw JSONParseError.MissingAttribute("address")
+        }
+        
+        guard let label = json["label"] as? String else
+        {
+            throw JSONParseError.MissingAttribute("label")
+        }
+        
+        self.address = address
+        self.label = label
     }
 }

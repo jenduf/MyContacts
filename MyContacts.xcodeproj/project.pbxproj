@@ -29,6 +29,7 @@
 		6719F6291C6219F800FA714D /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6719F6281C6219F800FA714D /* NavBarView.swift */; };
 		6719F62B1C62220B00FA714D /* LeftMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6719F62A1C62220B00FA714D /* LeftMenuView.swift */; };
 		67D1BAAC1C63857C00561D7C /* SearchScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D1BAAB1C63857C00561D7C /* SearchScope.swift */; };
+		67E699631C6BFDD100FA669D /* ParseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E699621C6BFDD100FA669D /* ParseError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		6719F6281C6219F800FA714D /* NavBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
 		6719F62A1C62220B00FA714D /* LeftMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuView.swift; sourceTree = "<group>"; };
 		67D1BAAB1C63857C00561D7C /* SearchScope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchScope.swift; sourceTree = "<group>"; };
+		67E699621C6BFDD100FA669D /* ParseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				6719F6261C62190400FA714D /* NavScreen.swift */,
+				67E699621C6BFDD100FA669D /* ParseError.swift */,
 				67D1BAAB1C63857C00561D7C /* SearchScope.swift */,
 			);
 			name = enums;
@@ -247,6 +250,7 @@
 				6719F6061C5C5CF900FA714D /* APIManager.swift in Sources */,
 				6719F6021C5C54CE00FA714D /* Contact.swift in Sources */,
 				6719F6291C6219F800FA714D /* NavBarView.swift in Sources */,
+				67E699631C6BFDD100FA669D /* ParseError.swift in Sources */,
 				6719F5F11C5C3B7F00FA714D /* LoginViewController.swift in Sources */,
 				6719F6171C5D34ED00FA714D /* Email.swift in Sources */,
 				6719F6271C62190400FA714D /* NavScreen.swift in Sources */,

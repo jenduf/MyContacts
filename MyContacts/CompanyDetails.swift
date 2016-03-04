@@ -8,14 +8,24 @@
 
 import Foundation
 
-public class CompanyDetails
+struct CompanyDetails: JSONParsable
 {
-    public var location: String = ""
-    public var name: String = ""
+    let location: String
+    let name: String
     
-    public init(dict: NSDictionary)
+    init(json: NSDictionary) throws
     {
-        self.location = dict["location"] as! String
-        self.name = dict["name"] as! String
+        guard let location = json["location"] as? String else
+        {
+            throw JSONParseError.MissingAttribute("location")
+        }
+        
+        guard let name = json["name"] as? String else
+        {
+            throw JSONParseError.MissingAttribute("name")
+        }
+        
+        self.location = location
+        self.name = name
     }
 }

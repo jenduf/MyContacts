@@ -34,21 +34,23 @@ public class APIManager: NSObject, NSURLSessionDelegate, NSURLSessionDataDelegat
     // MARK: Parse Helpers
     func parseJSONResponse(json: NSData?) -> AnyObject?
     {
-        var jsonData = []
-        
         do
         {
             let jsonObject = try NSJSONSerialization.JSONObjectWithData(json!, options: .AllowFragments)
-            jsonData = jsonObject as! NSArray
-            print("JSON Data: \(jsonData)")
+            if let jsonData = jsonObject as? NSArray
+            {
+                print("JSON Data: \(jsonData)")
+                return jsonData
+            }
+            else
+            {
+                fatalError("Unable to load JSON data for Contacts")
+            }
         }
         catch
         {
-            let nsError = error as NSError
-            print("JSON ERROR: \(nsError), DATA: \(json)")
+            fatalError("Error deserializing JSON data: \(error)")
         }
-
-        return jsonData
     }
     
     func dictionaryToJSON(dictionary: NSDictionary) throws -> NSData

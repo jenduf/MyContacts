@@ -9,29 +9,60 @@
 
 import Foundation
 
-public class Address
+struct Address: JSONParsable
 {
-    public var address1: String = ""
-    public var address2: String = ""
-    public var address3: String = ""
-    public var city: String = ""
-    public var country: String = ""
-    public var state: String = ""
-    public var zip: String = ""
+    let address1: String
+    let address2: String
+    let address3: String
+    let city: String
+    let country: String
+    let state: String
+    let zip: String
     
-    public init(dict: NSDictionary)
+    init(json: NSDictionary) throws
     {
-        self.address1 = dict["address1"] as! String
-        self.address2 = dict["address2"] as! String
-        self.address3 = dict["address3"] as! String
-        self.city = dict["city"] as! String
-        self.country = dict["country"] as! String
-        self.state = dict["state"] as! String
-        
-        if let z = dict["zipcode"] as? NSNumber
+        guard let address1 = json["address1"] as? String else
         {
-            self.zip = String(z)
+            throw JSONParseError.MissingAttribute("address1")
         }
+        
+        guard let address2 = json["address2"] as? String else
+        {
+            throw JSONParseError.MissingAttribute("address2")
+        }
+        
+        guard let address3 = json["address3"] as? String else
+        {
+            throw JSONParseError.MissingAttribute("address3")
+        }
+        
+        guard let city = json["city"] as? String else
+        {
+            throw JSONParseError.MissingAttribute("city")
+        }
+        
+        guard let country = json["country"] as? String else
+        {
+            throw JSONParseError.MissingAttribute("country")
+        }
+        
+        guard let state = json["state"] as? String else
+        {
+            throw JSONParseError.MissingAttribute("state")
+        }
+        
+        guard let zip = json["zipcode"] as? NSNumber else
+        {
+            throw JSONParseError.MissingAttribute("zip")
+        }
+        
+        self.address1 = address1
+        self.address2 = address2
+        self.address3 = address3
+        self.city = city
+        self.country = country
+        self.state = state
+        self.zip = String(zip)
     }
     
     func getLocationString() -> String

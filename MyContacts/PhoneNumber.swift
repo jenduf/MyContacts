@@ -8,15 +8,24 @@
 
 import Foundation
 
-
-public class PhoneNumber
+struct PhoneNumber: JSONParsable
 {
-    public var number: String = ""
-    public var type: String = ""
-    
-    public init(dict: NSDictionary)
+    let number: String
+    let type: String
+
+    init(json: NSDictionary) throws
     {
-        self.number = dict["number"] as! String
-        self.type = dict["type"] as! String
+        guard let number = json["number"] as? String else
+        {
+            throw JSONParseError.MissingAttribute("number")
+        }
+        
+        guard let type = json["type"] as? String else
+        {
+            throw JSONParseError.MissingAttribute("type")
+        }
+        
+        self.number = number
+        self.type = type
     }
 }

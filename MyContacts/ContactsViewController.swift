@@ -39,8 +39,19 @@ class ContactsViewController: BaseViewController
         { (data, error) -> Void in
             for dict in data as! NSArray
             {
-                let contact = Contact(dict: dict as! NSDictionary)
-                self.contacts.append(contact)
+                do
+                {
+                    let contact = try Contact(json: dict as! NSDictionary)
+                    self.contacts.append(contact)
+                }
+                catch JSONParseError.MissingAttribute(let missingAttribute)
+                {
+                    print("Unable to load contact, missing attribute \(missingAttribute)")
+                }
+                catch
+                {
+                    fatalError("Something's gone terribly wrong: \(error)")
+                }
             }
             
             self.contactsTableView.reloadData()
@@ -73,6 +84,8 @@ class ContactsViewController: BaseViewController
         self.filteredContacts.appendContentsOf(filtered)
         
         self.contactsTableView.reloadData()
+        
+        
     }
     
     @IBAction func dismissKeyboard(recognizer: UITapGestureRecognizer)

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyContacts/APIManager.swift"
-            timestampString = "476342115.254193"
+            timestampString = "478779498.940034"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100">
+            startingLineNumber = "97"
+            endingLineNumber = "97">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -24,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyContacts/APIManager.swift"
-            timestampString = "476342115.254193"
+            timestampString = "478779498.940034"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110">
+            startingLineNumber = "107"
+            endingLineNumber = "107">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -198,11 +198,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyContacts/ContactsViewController.swift"
-            timestampString = "476365977.959373"
+            timestampString = "478779471.732909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "filterContacts(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -214,11 +214,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyContacts/ContactsViewController.swift"
-            timestampString = "476365977.959373"
+            timestampString = "478779471.732909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "ContactsViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -230,11 +230,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyContacts/ContactsViewController.swift"
-            timestampString = "476365977.959373"
+            timestampString = "478779471.732909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "filterContacts(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -246,11 +246,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyContacts/ContactsViewController.swift"
-            timestampString = "476365977.959373"
+            timestampString = "478779471.732909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182">
+            startingLineNumber = "193"
+            endingLineNumber = "193">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -260,12 +260,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyContacts/ContactsViewController.swift"
-            timestampString = "476365977.959373"
+            timestampString = "478779471.732909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "numberOfSectionsInTableView(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyContacts/Contact.swift"
+            timestampString = "478780267.040985"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "init(json:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyContacts/Address.swift"
+            timestampString = "478781078.182162"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "init(json:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
